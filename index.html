@@ -26,20 +26,23 @@
 	    .card:hover .card-img-neu {
 	        display: none;
 	    }
-		@media (max-width: 1020px) {
-			#navDepartment {
+		@media (max-width: 1199px) {
+			#nav-department {
 				display: none;
 			}
-			#navDepartmentMobile {
+			#nav-m-department {
 				display: flex;
 			}
 		}
-		@media (min-width: 1021px) {
-			#navDepartment {
+		@media (min-width: 1200px) {
+			#nav-department {
 				display: flex;
 			}
-			#navDepartmentMobile {
+			#nav-m-department {
 				display: none;
+			}
+			.card-text:last-child {
+				height: 48px;
 			}
 		}
 	</style>
@@ -66,26 +69,26 @@
 		</ul>
 		<div id="banner-breadcrumb-bottom" class="content-banner banner-breadcrumb-bottom"></div>
 		<!-- Desktop Tab Bar -->
-		<ul id="navDepartment" class="nav nav-pills nav-justified">
-			<li class="nav-item active"><a class="nav-link active" data-toggle="tab" href="#administration">Administration</a></li>
-			<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#accounting">Accounting</a></li>
-		    <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#creative">Creative</a></li>
-		    <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#customerService">Customer Service</a></li>
-		    <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#marketing">Marketing</a></li>
-		    <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#production">Production</a></li>
-		    <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#warehouse">Warehouse</a></li>
+		<ul id="nav-department" class="nav nav-pills nav-justified">
+			<li class="nav-item"><a id="pill-administration" class="nav-link active" data-toggle="tab" href="#administration">Administration</a></li>
+			<li class="nav-item"><a id="pill-accounting" class="nav-link" data-toggle="tab" href="#accounting">Accounting</a></li>
+		    <li class="nav-item"><a id="pill-creative" class="nav-link" data-toggle="tab" href="#creative">Creative</a></li>
+		    <li class="nav-item"><a id="pill-customerService" class="nav-link" data-toggle="tab" href="#customerService">Customer Service</a></li>
+		    <li class="nav-item"><a id="pill-marketing" class="nav-link" data-toggle="tab" href="#marketing">Marketing</a></li>
+		    <li class="nav-item"><a id="pill-production" class="nav-link" data-toggle="tab" href="#production">Production</a></li>
+		    <li class="nav-item"><a id="pill-warehouse" class="nav-link" data-toggle="tab" href="#warehouse">Warehouse</a></li>
 		</ul>
 		<!-- End Desktop Tab Bar -->
 		
 		<!-- Mobile Tab Bar -->
-		<ul id="navDepartmentMobile" class="nav nav-pills flex-column">
-			<li class="nav-item active"><a class="nav-link active" data-toggle="tab" href="#administration">Administration</a></li>
-			<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#accounting">Accounting</a></li>
-		    <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#creative">Creative</a></li>
-		    <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#customerService">Customer Service</a></li>
-		    <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#marketing">Marketing</a></li>
-		    <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#production">Production</a></li>
-		    <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#warehouse">Warehouse</a></li>
+		<ul id="nav-m-department" class="nav nav-pills flex-column">
+			<li class="nav-item"><a id="pill-m-administration" class="nav-link active" data-toggle="tab" href="#administration">Administration</a></li>
+			<li class="nav-item"><a id="pill-m-accounting" class="nav-link" data-toggle="tab" href="#accounting">Accounting</a></li>
+		    <li class="nav-item"><a id="pill-m-creative" class="nav-link" data-toggle="tab" href="#creative">Creative</a></li>
+		    <li class="nav-item"><a id="pill-m-customerService" class="nav-link" data-toggle="tab" href="#customerService">Customer Service</a></li>
+		    <li class="nav-item"><a id="pill-m-marketing" class="nav-link" data-toggle="tab" href="#marketing">Marketing</a></li>
+		    <li class="nav-item"><a id="pill-m-production" class="nav-link" data-toggle="tab" href="#production">Production</a></li>
+		    <li class="nav-item"><a id="pill-m-warehouse" class="nav-link" data-toggle="tab" href="#warehouse">Warehouse</a></li>
 		</ul>
 		<!-- End Mobile Tab Bar -->
 		
@@ -219,8 +222,7 @@
 					<!-- Erin Simula -->
 				    <div class="col-xl-3 col-md-6 mb-4">
 				  		<div class="card border-0 shadow">
-				    		<img src="CAG_EMPLOYEES_HEADSHOTS\creative\ERIN_SIMULA.jpg" class="card-img-top card-img-neu" alt="...">
-				    		<img src="CAG_EMPLOYEES_HEADSHOTS\MUGSHOTS\creative\ERIN_SIMULA.jpg" class="card-img-top card-img-alt" alt="...">
+				    		<img src="CAG_EMPLOYEES_HEADSHOTS\creative\ERIN_SIMULA.jpg" class="card-img-top" alt="...">
 				        	<div class="card-body text-center">
 				      			<h5 class="card-title mb-0">Erin Simula</h5>
 				      			<div class="card-text text-black-50">Designer</div>
@@ -240,8 +242,7 @@
 					<!-- Staci Bryant -->
 				    <div class="col-xl-3 col-md-6 mb-4">
 				  		<div class="card border-0 shadow">
-				    		<img src="CAG_EMPLOYEES_HEADSHOTS\creative\STACI_BRYANT.jpg" class="card-img-top card-img-neu" alt="...">
-				    		<img src="CAG_EMPLOYEES_HEADSHOTS\creative\STACI_BRYANT_2.jpg" class="card-img-top card-img-alt" alt="...">
+				    		<img src="CAG_EMPLOYEES_HEADSHOTS\creative\STACI_BRYANT.jpg" class="card-img-top" alt="...">
 				        	<div class="card-body text-center">
 				      			<h5 class="card-title mb-0">Staci Bryant</h5>
 				      			<div class="card-text text-black-50">Designer / Superwoman</div>
@@ -630,12 +631,14 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 	<script type="text/javascript" src="bootstrap-tabcollapse.js"></script>
-	<script type="text/javascript">
-		$(window).on('resize scroll load unload', function(){
-      		var win = $(this); //this = window
-      		if ($(window).width() < 1020) {
-   				$('#navDepartmentVoid').tabCollapse();
-			}
+	<script>
+		$('#nav-department').find('.nav-link').on('click', function() {
+			$('#nav-m-department').find('.nav-link').removeClass('active');
+			$('#pill-m-' + this.id.split('-')[1]).addClass('active');
+		});
+		$('#nav-m-department').find('.nav-link').on('click', function() {
+			$('#nav-department').find('.nav-link').removeClass('active');
+			$('#pill-' + this.id.split('-')[2]).addClass('active');
 		});
 	</script>
   </body>
