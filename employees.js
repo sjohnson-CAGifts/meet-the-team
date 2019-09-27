@@ -348,19 +348,19 @@ var staff = {
 				"extension": "1030"
 			},
 			{
-				"name": "Ned Herbert",
-				"primary": "EDWARD_HERBERT.jpg",
-				"secondary": null,
-				"department": "Distribution",
-				"role": "Meter Operator"
-			},
-			{
 				"name": "Myriam Oquendo",
 				"primary": "MYRIAM_OQUENDO.jpg",
 				"secondary": null,
 				"department": "Distribution",
-				"role": "Shipping Associate",
+				"role": "Meter Operator",
 				"extension": "1017"
+			},
+			{
+				"name": "Ned Herbert",
+				"primary": "EDWARD_HERBERT.jpg",
+				"secondary": null,
+				"department": "Distribution",
+				"role": "Shipping Associate"
 			},
 			{
 				"name": "Fernando Hernandez",
