@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <title>Meet the Team</title>
+	   <link rel="shortcut icon" href="https://www.christianartgifts.com/shopflow/img/favicon.ico">
+  </head>
+  <body>
+  	<style type="text/css">
+	    .card .card-img-alt {
+	        display: none;
+	        z-index: 99;
+	    }
+	    .card:hover .card-img-alt {
+	        display: inline;
+	    }
+	    .card:hover .card-img-neu {
+	        display: none;
+	    }
+  		.card-title {
+  		    color: #F7922B;
+  		    font-family: 'Graphie-Bold',sans-serif;
+  		}
+  		.card-text {
+  		    color: #53565A;
+  		    font-family: 'Graphie-Regular',sans-serif;
+  		    text-rendering: optimizeLegibility;
+  		    -webkit-font-smoothing: antialiased;
+  		    -moz-osx-font-smoothing: grayscale;
+  		}
+      .card-footer .card-text {
+        font-size: 12px!important;
+      }
+		@media (max-width: 1199px) {
+			#nav-b-department {
+				display: none;
+			}
+			#nav-b-m-department {
+				display: flex;
+			}
+		}
+		@media (min-width: 1200px) {
+			#nav-b-department {
+				display: flex;
+			}
+			#nav-b-m-department {
+				display: none;
+			}
+		}
+		@media (min-width: 768px) {
+			.card-text:last-child {
+				height: 48px;
+			}
+		}
+	</style>
+
+    <!-- Header -->
+	<header class="bg-primary text-center mb-4">
+    <img src="MEET THE TEAM.jpg" style="width: 100%">
+	</header>
+
+	<!-- Page Content -->
+
+	<div class="container">
+		<div id="banner-breadcrumb-top" class="content-banner banner-breadcrumb-top"></div>
+		<ul class="breadcrumb hidden-phone" itemprop="breadcrumb">
+            <li>
+				<a href="/">HOME</a>
+				<span class="divider">/</span>
+			</li>
+			<li class="active">
+				MEET THE TEAM
+			</li>
+		</ul>
+		<div id="banner-breadcrumb-bottom" class="content-banner banner-breadcrumb-bottom"></div>
+
+		<ul id="nav-b-department" class="nav nav-pills nav-fill"></ul>
+		<ul id="nav-b-m-department" class="nav nav-pills flex-column"></ul>
+
+		<div id="body-b" class="tab-content card-deck"></div>
+	</div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="employees.js"></script>
+	<script>
+		$('#nav-department').find('.nav-link').on('click', function() {
+			$('#nav-m-department').find('.nav-link').removeClass('active');
+			$('#pill-m-' + this.id.split('-')[1]).addClass('active');
+		});
+		$('#nav-m-department').find('.nav-link').on('click', function() {
+			$('#nav-department').find('.nav-link').removeClass('active');
+			$('#pill-' + this.id.split('-')[2]).addClass('active');
+		});
+	</script>
+	<script>
+		for (var department in staff) {
+			var tab = '<li class="nav-item"><a id="pill-' + department + '" class="nav-link" data-toggle="tab" href="#' + department + '">' + staff[department]['department'] + '</a></li>';
+			var m_tab = '<li class="nav-item"><a id="pill-m-' + department + '" class="nav-link" data-toggle="tab" href="#' + department + '">' + staff[department]['department'] + '</a></li>';
+			$('#nav-b-department').append(tab);
+			$('#nav-b-m-department').append(m_tab);
+			var tab_content = '<div id="' + department + '" class="tab-pane fade">';
+			tab_content += '<div class="row mt-4">';
+			for (var employee in staff[department]['employees']) {
+				employee = staff[department]['employees'][employee];
+				var employee_profile = '<div class="col-xl-3 col-lg-4 col-md-6 mb-4"><div class="card border-0 shadow">';
+				if (employee['primary'] == null) {
+					employee_profile += '<img src="CAG_EMPLOYEES_HEADSHOTS\\null_' + (employee['name'] == 'Nicole Grimes' ? 'f' : 'm') + '.jpg" class="card-img-top" alt="...">';
+				} else if (employee['secondary'] == null) {
+					employee_profile += '<img src="CAG_EMPLOYEES_HEADSHOTS\\' + department + '\\' + employee['primary'] + '" class="card-img-top" alt="...">';
+				} else {
+					employee_profile += '<img src="CAG_EMPLOYEES_HEADSHOTS\\' + department + '\\' + employee['primary'] + '" class="card-img-top card-img-neu" alt="...">';
+					employee_profile += '<img src="CAG_EMPLOYEES_HEADSHOTS\\' + department + '\\' + employee['secondary'] + '" class="card-img-top card-img-alt" alt="...">';
+				}
+				employee_profile += '<div class="card-body text-center">';
+				employee_profile += '<h5 class="card-title mb-0">' + employee['name'] + '</h5>';
+				employee_profile += '<div class="card-text text-black-50">' + employee['role'] + '</div>';
+				employee_profile += '</div>';
+        if (employee['email'] != null || employee['extension'] != null || employee['cell'] != null) {
+  				employee_profile += '<ul class="card-footer text-muted padding-xs" style="margin-bottom: 0!important"><small>';
+          if (employee['email'] != null) {
+            employee_profile += '<li class="d-flex justify-content-between align-items-center">';
+            employee_profile += '<a href="mailto:' + employee['email'] + '">';
+            employee_profile += employee['email'];
+            employee_profile += '</a>';
+            employee_profile += '<i class="material-icons">email</i>';
+            employee_profile += '</li>';
+          }
+          if (employee['extension'] != null) {
+            employee_profile += '<li class="d-flex justify-content-between align-items-center">';
+            employee_profile += '<a href="tel:800-521-7807,' + employee['extension'] + '">';
+            employee_profile += 'Ext. ' + employee['extension'];
+            employee_profile += '</a>';
+            employee_profile += '<i class="material-icons">phone</i>';
+            employee_profile += '</li>';
+          }
+          else if (employee['cell'] != null) {
+            employee_profile += '<li class="d-flex justify-content-between align-items-center">';
+            employee_profile += '<a href="tel:' + employee['cell'] + '">';
+            employee_profile += employee['cell'];
+            employee_profile += '</a>';
+            employee_profile += '<i class="material-icons">phone</i>';
+            employee_profile += '</li>';
+          }
+          employee_profile += '</small></ul>';
+        }
+				employee_profile += '</div></div>';
+				tab_content += employee_profile;
+			}
+			$('#body-b').append(tab_content);
+		};
+		$('#nav-b-department').find('.nav-link').first().addClass('active');
+		$('#nav-b-m-department').find('.nav-link').first().addClass('active');
+		$('#body-b').find('.tab-pane').first().addClass('in show active');
+	</script>
+  </body>
+</html>
