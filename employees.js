@@ -123,7 +123,7 @@ var staff = {
 				"primary": "STACI_BRYANT_2.jpg",
 				"secondary": null,
 				"department": "Creative",
-				"role": "Designer / Superwoman",
+				"role": "Designer",
 				"email": "sbryant@cagifts.com",
 				"extension": "1021"
 			},
